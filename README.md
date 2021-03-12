@@ -1,6 +1,11 @@
 <h1 align="middle">Exynos Discord Bot</h1>
 <h4 align="middle">Made With Pure :heart: and Soul</h4>
 
+<br>
+
+[![Discord Bots](https://top.gg/api/widget/status/764726231891312670.svg?avatar=true)](https://top.gg/bot/764726231891312670) <a href ="https://github.com/Exynos-Discord/"><img src = "https://img.shields.io/badge/Exynos-v3.1.1-green.svg?noavatar=true?style=plastic&maxAge=300">
+<a href ="http://discord.js.org"><img src = "https://img.shields.io/badge/discord.js-12.5.1-blue.svg?noavatar=true?style=plastic&maxAge=300"> <a href ="https://discord-akairo.github.io/"><img src = "https://img.shields.io/badge/akairo-8.1.0-critical.svg?noavatar=true?style=plastic&maxAge=300"> </a>
+
 ## :books: A Brief Description:
 Exynos (v3.1.1) is a Multipurpose Discord Bot featuring a ton of useful commands and easy-to-use User Interface. She is mainly built using the powerful [**Akairo**](https://discord-akairo.github.io/) Framework which is a Plug-N-Play Framework and [**Discord.JS**](https://discord.js.org/) acts as a Plate for all the delicious dependencies and commands!
 
