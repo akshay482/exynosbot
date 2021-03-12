@@ -1,6 +1,5 @@
-<h1 align="left">Exynos Discord Bot</h1>
-<h4 align="left">Made With Pure :heart: and Soul</h4>
-<br>
+<h1 align="middle">Exynos Discord Bot</h1>
+<h4 align="middle">Made With Pure :heart: and Soul</h4>
 
 ## :books: A Brief Description:
 Exynos (v3.1.1) is a Multipurpose Discord Bot featuring a ton of useful commands and easy-to-use User Interface. She is mainly built using the powerful [**Akairo**](https://discord-akairo.github.io/) Framework which is a Plug-N-Play Framework and [**Discord.JS**](https://discord.js.org/) acts as a Plate for all the delicious dependencies and commands!
@@ -33,4 +32,4 @@ Though we are opening our repository for people to see how the system works, sel
 ## ©️ License:
 Exynos and Exynos-Discord is Licensed Under [Mozilla Public License 2.0](https://github.com/Exynos-Discord/exynos/blob/main/LICENSE), Discord, GitHub and Follows every Terms and Code of Conducts of GitHub. This Repository can be used under MPL 2.0 License and breaking of the ToS can result in an action against the user.
 
-</h2>✨ We Really Hope You Enjoy Using the Bot, Be Sure to leave any suggestion/review/note on our Official Discord :)</h2>
+<h2> ✨ We Really Hope You Enjoy Using the Bot, Be Sure to leave any suggestion/review/note on our Official Discord :)</h2>
