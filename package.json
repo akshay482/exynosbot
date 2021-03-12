@@ -1,0 +1,40 @@
+{
+  "name": "exynos",
+  "version": "2.1.1",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DeadShot",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.3",
+    "common-tags": "^1.8.0",
+    "dblapi.js": "^2.4.1",
+    "diff": "^4.0.2",
+    "discord-akairo": "^8.1.0",
+    "discord-giveaways": "^4.4.1",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
+    "erela.js": "^2.3.2",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.6",
+    "got": "^11.8.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.3",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.1",
+    "novelcovid": "^3.0.0",
+    "opusscript": "^0.0.7",
+    "os": "^0.1.1",
+    "quick.db": "7.1.2",
+    "scrape-yt": "^1.4.6",
+    "superagent": "^6.1.0",
+    "util": "^0.12.3",
+    "ytdl-core": "^4.5.0",
+    "ytdl-core-discord": "^1.2.3"
+  }
+}
