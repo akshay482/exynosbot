@@ -26,7 +26,7 @@ JavaScript Developer, Backend Developer and Co-Founder | Co-Owner of @Exynos-Dis
 - 🛠️ **AutoMod**: `anti-curse` and `anti-links`
 
 ## ❓ Self-hosting?
-Though we are opening our repository for people to see how the system works, self-hosting is not recommended as no service or help will be provided by our sides as we our team have the internal access and some of the commands are not added to the repo due to security reasons. And if you are clever enough to self-host it, you then will also be able to make your own bot.
+Though we are opening our repository for people to see how the system works, self-hosting is not recommended as no service or help will be provided by our sides, also some of the commands are not added to the repo due to security reasons. And if you are clever enough to self-host it, you then will also be able to make your own bot.
 
 ## 📥 Some Useful Links:
 - [**Invite Exynos**](https://discord.com/oauth2/authorize?client_id=764726231891312670&scope=bot&permissions=510976)
