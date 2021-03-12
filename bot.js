@@ -5,7 +5,7 @@ const { Discord, MessageEmbed } = require('discord.js');
 const fs = require("fs");
 const DBL = require("dblapi.js");
 
-const { ownerID, defaultPrefix } = require('./config.js');
+const { ownerID, defaultPrefix, badWords } = require('./config.js');
 const { config }= require('dotenv');
 const { join } = require('path');
 
@@ -24,7 +24,7 @@ class ExynosClient extends AkairoClient {
                 disableEveryone: true
             }
         );
-        this.dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NDcyNjIzMTg5MTMxMjY3MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA4MjAyMzc4fQ.7xKJhRQ56PYirZLvnq7u3Qk4SBaJTcKhbfvfRGBUMOo', {
+        this.dbl = new DBL(dbl_token, {
             statsInterval: 900000
         }, this)
 
@@ -60,33 +60,6 @@ class ExynosClient extends AkairoClient {
 };
 
 const client = new ExynosClient();
-const { Collection } = require('discord.js')
-
-client.queue = new Map()
-
-fs.readdir("./events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    const event = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
-    client.on(eventName, event.bind(null, client));
-  });
-});
-
-client.commands = new Collection();
-
-fs.readdir("./music/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    if (!file.endsWith(".js")) return;
-    let props = require(`./music/${file}`);
-    let commandName = file.split(".")[0];
-    console.log(`Attempting to load command ${commandName}`);
-    client.commands.set(commandName, props);
-  });
-});
-
-
 
 client.on("guildMemberAdd", async member => {
   let chx = db.get(`welchannel_${member.guild.id}`);
@@ -94,7 +67,56 @@ client.on("guildMemberAdd", async member => {
   if (chx === null) {
     return;
   }
-  client.channels.cache.get(chx).send(`:tada: **Welcome to Our Server <@${member.user.id}>. Hope You Enjoy Your Stay Here!**`);
+    const embed = new MessageEmbed()
+    .setTitle('<a:welcome:818365016424185856> Welcome To The Server! <a:welcome:818365016424185856>')
+    .setDescription(`<a:Right_arrow:806860260237246465> Hello There, <@${member.user.id}> | We Are Extremely Happy to See You In Our Server. Make Sure to Read Rules and Enjoy Your Stay Here!`)
+    .setThumbnail(member.user.displayAvatarURL())
+    .setFooter('Powered By: Exynos')
+    .setTimestamp();
+  client.channels.cache.get(chx).send(embed);
 });
 
-client.login('NzY0NzI2MjMxODkxMzEyNjcw.X4KczQ.eyNHVNI_3d2fWwty_akI6GI6Q1w');
+client.on("message", async message => {
+    if(message.content === `e?welcome-test`) {
+        const user = message.author;
+        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry_sign: Invalid Permission");
+        
+        const embed = new MessageEmbed()
+    .setTitle('<a:welcome:818365016424185856> Welcome To The Server! <a:welcome:818365016424185856>')
+    .setDescription(`<a:Right_arrow:806860260237246465> Hello There, ${user} | We Are Extremely Happy to See You In Our Server. Make Sure to Read Rules and Enjoy Your Stay Here!`)
+    .setThumbnail(user.displayAvatarURL())
+    .setFooter('Powered By: Exynos')
+    .setTimestamp();
+        message.channel.send(embed)
+    }
+    
+    if(message.content === `e?set`) {
+        const embed = new MessageEmbed()
+    .setTitle('Getting Started')
+    .setDescription('<:staff:780263034018594898> Before You Get Started With the Bot, Be Sure to Check the Following:')
+    .addField('<:bot:780263750351585281> Bot Permissions:', [
+        '`Manage Messages` , `Manage Roles` , `Manage Nickname` , `Voice Activity` , `Manage Channels` , `Kick/Ban Members`'
+    ])
+    .addField('<:tickYes:796258492096708609> Extra Checks:', [
+        '`Bot Role Positioning` , `Permission Handling` , `Remove Permission (Where You Dont Want the Bot to Function)`'
+    ])
+    .setThumbnail(client.user.displayAvatarURL())
+    .setFooter('Use e?help for Commands List')
+    message.channel.send(embed);
+    }
+    
+    if(message.content === badWords) {
+        const user = message.author;
+        if (message.member.hasPermission("MANAGE_SERVER")) return;
+        
+        message.delete();
+        message.channel.send(`Uh, Oh! ${user}, you aren't allowed to send that word here!`)
+    }
+    if (message.content.includes('discord.gg/'||'discordapp.com/invite/')) { 
+        if (message.member.hasPermission("MANAGE_SERVER")) return;
+    message.delete()
+      .then(message.channel.send(`${message.member}, Invite Links are not allowed!`))
+  }
+})
+
+client.login(discord_token);
