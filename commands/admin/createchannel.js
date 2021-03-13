@@ -15,10 +15,6 @@ class CreateChannel extends Command {
                 {
                     id: 'chtype',
                     type: 'string',
-                },
-                {
-                    id: 'name',
-                    type: 'string',
                 }
             ],
             typing: false
@@ -26,10 +22,14 @@ class CreateChannel extends Command {
         });
     }
 
-    async exec(message, { chtype, name }) {
+    async exec(message, { chtype }) {
 
         if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(":no_entry_sign: Invalid Permissions");
         
+        const prefix = 'e?'
+        const args = message.content.slice(prefix.length).split(/ +/);
+        
+        let name = args.slice(1).join(" ");
         if (!name) return message.reply(':no_entry_sign: Mention The Channel Name');
         
         if (!chtype) return message.reply(':no_entry_sign: Mention The Channel Type [``Text/Voice``]');
