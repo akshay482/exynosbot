@@ -18,7 +18,7 @@ class ExynosClient extends AkairoClient {
     constructor() {
         super(
             {
-                ownerID
+                𝐀𝐊𝐒𝐇𝐀𝐘®[left]#9235
             },
             {
                 disableEveryone: true
@@ -29,7 +29,7 @@ class ExynosClient extends AkairoClient {
         }, this)
 
         this.commandHandler = new CommandHandler(this, {
-            prefix: defaultPrefix,
+            prefix: AK,
             blockBots: true,
             blockClient: true,
             allowMention: true,
@@ -119,4 +119,4 @@ client.on("message", async message => {
   }
 })
 
-client.login(discord_token);
+client.login(ODEyNjYzOTczNzE4Nzg2MDU4.YDECTQ.P-IorvBzUB0QoSzcz3nplkXbyjU);
